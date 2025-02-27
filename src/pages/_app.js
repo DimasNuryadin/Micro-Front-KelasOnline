@@ -1,4 +1,5 @@
 import "../../styles/globals.css";
+import "../../styles/style.css";
 import { ToastContainer } from 'react-toastify';
 
 export default function App({ Component, pageProps }) {

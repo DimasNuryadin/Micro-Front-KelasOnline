@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import colors from './styles/colors';
+
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -134,35 +136,7 @@ export default {
       200: '2',
     },
     caretColor: ({ theme }) => theme('colors'),
-    colors: ({ colors }) => ({
-      inherit: colors.inherit,
-      current: colors.current,
-      transparent: colors.transparent,
-      black: colors.black,
-      white: colors.white,
-      slate: colors.slate,
-      gray: colors.gray,
-      zinc: colors.zinc,
-      neutral: colors.neutral,
-      stone: colors.stone,
-      red: colors.red,
-      orange: colors.orange,
-      amber: colors.amber,
-      yellow: colors.yellow,
-      lime: colors.lime,
-      green: colors.green,
-      emerald: colors.emerald,
-      teal: colors.teal,
-      cyan: colors.cyan,
-      sky: colors.sky,
-      blue: colors.blue,
-      indigo: colors.indigo,
-      violet: colors.violet,
-      purple: colors.purple,
-      fuchsia: colors.fuchsia,
-      pink: colors.pink,
-      rose: colors.rose,
-    }),
+    colors: colors,
     columns: {
       auto: 'auto',
       1: '1',
@@ -305,13 +279,8 @@ export default {
     },
     fontFamily: {
       sans: [
-        'ui-sans-serif',
-        'system-ui',
+        'Poppins',
         'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
       ],
       serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
       mono: [
