@@ -5,6 +5,7 @@ import Head from "next/head";
 import Header from "./parts/Header";
 import Hero from "./parts/Hero";
 import Clients from "./parts/Clients";
+import ListCourses from "./parts/ListCourses";
 
 Home.propTypes = {
   data: propTypes.array
@@ -28,18 +29,21 @@ function Home({ data }) {
         <section className="container mx-auto pt-24">
           <Clients />
         </section>
+        <section className="container mx-auto pt-24">
+          <ListCourses data={data} />
+        </section>
       </main>
     </>
   );
 }
 
-// Home.getInitialProps = async () => {
-//   try {
-//     const data = await axios.get(`/courses`);
-//     return { data: data.data.data };
-//   } catch (error) {
-//     return error;
-//   }
-// }
+Home.getInitialProps = async () => {
+  try {
+    const data = await axios.get(`/courses`);
+    return { data: data.data.data };
+  } catch (error) {
+    return error;
+  }
+}
 
 export default Home;
