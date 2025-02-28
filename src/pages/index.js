@@ -7,6 +7,7 @@ import Hero from "./parts/Hero";
 import Clients from "./parts/Clients";
 import ListCourses from "./parts/ListCourses";
 import ListCategories from "./parts/ListCategories";
+import Footer from "./parts/Footer";
 
 Home.propTypes = {
   data: propTypes.array
@@ -35,6 +36,9 @@ function Home({ data }) {
         </section>
         <section className="container mx-auto pt-24">
           <ListCategories />
+        </section>
+        <section className="mt-24 bg-indigo-1000 py-12">
+          <Footer />
         </section>
       </main>
     </>
