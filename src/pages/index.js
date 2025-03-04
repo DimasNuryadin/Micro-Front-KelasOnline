@@ -1,5 +1,4 @@
 import propTypes from 'prop-types'
-import axios from 'src/configs/axios';
 import Circle from '@/public/images/circle-accent-1.svg';
 import Head from "next/head";
 import Header from "./parts/Header";
@@ -8,6 +7,7 @@ import Clients from "./parts/Clients";
 import ListCourses from "./parts/ListCourses";
 import ListCategories from "./parts/ListCategories";
 import Footer from "./parts/Footer";
+import courses from "src/constants/api/courses";
 
 Home.propTypes = {
   data: propTypes.array
@@ -44,11 +44,10 @@ function Home({ data }) {
     </>
   );
 }
-
 Home.getInitialProps = async () => {
   try {
-    const data = await axios.get(`/courses`);
-    return { data: data.data.data };
+    const data = await courses.all();
+    return { data: data.data };
   } catch (error) {
     return error;
   }
