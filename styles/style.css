@@ -189,3 +189,23 @@
 .overlay-enter-done {
   opacity: 1;
 }
+
+.accordion-item {
+  @apply transition-all duration-200
+}
+
+.accordion-item-enter {
+  opacity: 0;
+}
+
+.accordion-item-enter-active {
+  opacity: 1;
+}
+
+.accordion-item-exit {
+  opacity: 1;
+}
+
+.accordion-item-exit-active {
+  opacity: 0;
+}

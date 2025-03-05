@@ -9,6 +9,7 @@ import Header from "@/src/pages/parts/Header";
 import Feature from '@/src/pages/parts/Details/Feature';
 import Footer from '@/src/pages/parts/Footer';
 import CoursePhoto from '@/src/pages/parts/Details/CoursePhoto';
+import RenderPreview from "@/src/pages/parts/Details/RenderPreview";
 
 // SVG Files
 import Nametag from '@/public/images/icon-nametag.svg';
@@ -26,7 +27,7 @@ function DetailsCourse({ data }) {
   useEffect(() => {
     const stickyOffsetTop = footer.current.getBoundingClientRect().top
     const stickyMetaToggler = () => {
-      setIsSticky(stickyOffsetTop > window.pageYOffset + window.innerHeight);
+      setIsSticky(stickyOffsetTop > window.scrollY + window.innerHeight);
     }
 
     window.addEventListener("scroll", stickyMetaToggler)
@@ -137,6 +138,13 @@ function DetailsCourse({ data }) {
                     : <div className="w-full text-center py-12">No Item Found</div>
                 }
               </div>
+            </section>
+
+            <section className="mt-10">
+              <h6 className="font-medium text-gray-900 text-2xl mb-4">You Will <span className="text-teal-500">Learn</span> </h6>
+              {
+                data?.chapters?.length > 0 ? <RenderPreview previews={data.chapters}></RenderPreview> : <div className="w-full text-center py-12">No Chapter Found</div>
+              }
             </section>
           </div>
         </div>
