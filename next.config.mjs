@@ -4,10 +4,26 @@ const nextConfig = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      issuer: /\.[jt]sx?$/,
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            svgo: true,
+            svgoConfig: {
+              plugins: [
+                "preset-default",
+                { name: "removeViewBox", active: false },
+                { name: "prefixIds", active: true },
+              ],
+            },
+          },
+        },
+      ],
     });
+
     return config;
-  }
+  },
 };
 
 export default nextConfig;
