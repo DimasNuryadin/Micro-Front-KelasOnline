@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from 'react';
 import propTypes from 'prop-types';
 import RenderItem from "./RenderItem";
@@ -16,9 +15,9 @@ export default function ListCourses({ data }) {
           <h3 className="text-xl text-gray-900">Summer <span className="text-teal-400">Productive</span></h3>
         </div>
         <div className="w-auto">
-          <Link href="/courses" className="text-gray-600 hover:underline text-sm">
+          <a href="/courses" className="text-gray-600 hover:underline text-sm">
             View All Course
-          </Link>
+          </a>
         </div>
       </div>
       <div className="flex justify-start items-center -mx-4 mt-6">
